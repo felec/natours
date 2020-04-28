@@ -1,5 +1,4 @@
 body {
-  padding: 3rem;
   font-family: "Lato";
   font-weight: 400;
   /* font-size: 16px; */
@@ -13,15 +12,11 @@ body {
   backface-visibility: hidden;
   margin-bottom: 6rem;
 
-  &--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.7rem;
-    animation: moveInRight 2s;
-  }
-
   &--main {
+    @include respond(phone) {
+      letter-spacing: 1rem;
+    }
+
     display: block;
     font-size: 6rem;
     font-weight: 400;
@@ -32,9 +27,29 @@ body {
     /* animation-iteration-count: 3; */
     /* animation-timing-function: ease-in; */
   }
+
+  &--sub {
+    @include respond(phone) {
+      letter-spacing: 0.5rem;
+    }
+
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.7rem;
+    animation: moveInRight 2s;
+  }
 }
 
 .heading-secondary {
+  @include respond(tab-port) {
+    font-size: 3rem;
+  }
+
+  @include respond(phone) {
+    font-size: 2.5rem;
+  }
+
   display: inline-block;
   font-size: 3.5rem;
   text-transform: uppercase;
